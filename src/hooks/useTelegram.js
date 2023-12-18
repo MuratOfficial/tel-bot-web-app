@@ -1,7 +1,5 @@
 const tg = window.Telegram.WebApp;
 
-import React from "react";
-
 export default function useTelegram() {
   const onClose = () => {
     tg.close();
