@@ -8,4 +8,13 @@
 
 .username {
   margin-left: auto;
+  text-align: center;
+  font-weight: bolder;
+  padding: 10px 15px;
+  background: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
 }
