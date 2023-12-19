@@ -11,7 +11,7 @@ export default function Header() {
     <div className={'header'}>
         <Button onClick={onClose}>Закрыть</Button>
         <span className={'username'}>
-            {user?.username} <FaUser/>
+        <FaUser/> {" "} {user?.username} 
         </span>
     </div>
   )
