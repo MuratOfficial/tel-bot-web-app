@@ -12,7 +12,7 @@ const CategoryItem = ({category, className}) => {
             <div className={'img'} style={{backgroundImage:`url(${category.img})`}}></div>
             <div className={'title'}>{category.title}</div>
             <div className={'description'}>{category.description}</div>
-            <Link to={`/${category.path}`}>
+            <Link to={`/categories/${category.path}`}>
             <Button>
                 Перейти
             </Button>

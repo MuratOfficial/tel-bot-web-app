@@ -3,8 +3,9 @@ import "./App.css";
 import { useTelegram } from "./hooks/useTelegram";
 import Header from "./components/Header/Header";
 import { Route, Routes } from "react-router-dom";
-import Form from "./components/Form/Form";
 import CategoryList from "./components/CategoryList/CategoryList";
+import ErrorPage from "./ErrorPage";
+import CategoryLayout from "./components/Layouts/CategoryLayout";
 
 function App() {
   const { tg } = useTelegram();
@@ -17,7 +18,12 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route index element={<CategoryList />} />
+        <Route index element={<CategoryList />} errorElement={<ErrorPage />} />
+        <Route path="categories">
+          <Route path=":categoryId" element={<CategoryLayout />} />
+        </Route>
+
+        <Route path="cabinet" element />
       </Routes>
     </div>
   );

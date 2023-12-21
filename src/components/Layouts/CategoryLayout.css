@@ -1,0 +1,29 @@
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--tg-theme-secondary-bg-color);
+}
+
+.item {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.titletext {
+  font-size: 2rem;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  color: var(--tg-theme-text-color);
+}
+
+.category-desc {
+  font-size: 1rem;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  color: var(--tg-theme-hint-color);
+}
