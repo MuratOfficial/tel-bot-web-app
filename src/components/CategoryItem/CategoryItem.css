@@ -1,0 +1,32 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--tg-theme-button-color);
+  border-radius: 15px;
+  padding: 15px;
+  width: 170px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img {
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.description {
+  font-size: 0.8em;
+  text-align: center;
+
+  color: slategray;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.add-btn {
+  width: 100%;
+}

@@ -1,0 +1,11 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--tg-theme-bg-color);
+}
+
+.item {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
