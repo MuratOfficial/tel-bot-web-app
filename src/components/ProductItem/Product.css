@@ -1,30 +1,36 @@
 .product {
   display: flex;
   flex-direction: column;
-  border: 2px solid var(--tg-theme-button-color);
+  background-color: var(--tg-theme-bg-color);
   border-radius: 15px;
   padding: 15px;
   width: 170px;
   align-items: center;
   justify-content: space-between;
+  row-gap: 1rem;
 }
 
 .img {
   width: 100%;
   height: 100px;
   margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
 }
 
 .description {
   font-size: 0.8em;
   text-align: center;
 
-  color: slategray;
+  color: var(--tg-theme-hint-color);
 }
 
 .title {
   text-align: center;
   font-weight: bold;
+  color: var(--tg-theme-text-color);
 }
 
 .add-btn {
