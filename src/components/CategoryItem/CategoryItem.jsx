@@ -1,19 +1,23 @@
 import React from 'react';
 import Button from '../Button/Button';
 import "./CategoryItem.css"
+import { Link } from 'react-router-dom';
 
-const CategoryItem = ({product, className}) => {
+const CategoryItem = ({category, className}) => {
 
 
 
     return (
         <div className={'product ' + className}>
-            <div ><img src={product.img} className={'img'}alt={product.title}/></div>
-            <div className={'title'}>{product.title}</div>
-            
-            <Button >
+            <div className={'img'} style={{backgroundImage:`url(${category.img})`}}></div>
+            <div className={'title'}>{category.title}</div>
+            <div className={'description'}>{category.description}</div>
+            <Link to={`/${category.path}`}>
+            <Button>
                 Перейти
             </Button>
+            </Link>
+            
         </div>
     );
 };
