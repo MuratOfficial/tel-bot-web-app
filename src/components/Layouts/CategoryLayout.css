@@ -18,6 +18,7 @@
   width: 100%;
   text-align: center;
   color: var(--tg-theme-text-color);
+  padding: 10px 10px;
 }
 
 .category-desc {

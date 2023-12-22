@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import "./CategoryList.css";
 import CategoryItem from '../CategoryItem/CategoryItem';
 
+
 const categories = [
     {id: '1', path: "cakes", title: 'Пироги',  description: 'Вкусные пироги', img: "./assets/category1.jpg"},
     {id: '2',path: "pies", title: 'Торты',  description: 'Чудесные торты', img: "./assets/category2.jpg"},
