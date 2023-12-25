@@ -39,7 +39,7 @@ export default function CategoryLayout() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/products');
+        const response = await axios.get('https://magnificent-speculoos-ca08a4.netlify.app/.netlify/functions/products-get');
         setProducts(response.data.rows);
       } catch (error) {
         // Handle errors here

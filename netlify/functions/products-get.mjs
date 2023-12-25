@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-app.get("/api/products", async (req, res) => {
+export default async (req, res) => {
   try {
     const apiUrl = "https://api.moysklad.ru/api/remap/1.2/entity/product";
     const username = "admin@dessert1";
@@ -22,4 +22,4 @@ app.get("/api/products", async (req, res) => {
     console.error("Error in proxy request:", error.message);
     res.status(500).send("Internal Server Error");
   }
-});
+};
