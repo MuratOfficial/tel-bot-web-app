@@ -1,5 +1,6 @@
 export default async function () {
-  const apiUrl = "https://api.moysklad.ru/api/remap/1.2/entity/product";
+  const apiUrl =
+    "https://api.moysklad.ru/api/remap/1.2/entity/product?filter=pathName=Пироги&filter=pathName=Пирожные&filter=pathName=Торты&filter=pathName=Чизкейки&filter=pathName=Премиум&filter=pathName=AIRBA FRESH";
   const username = "admin@dessert1";
   const password = "7212565689";
 

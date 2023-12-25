@@ -36,10 +36,19 @@ export default function CategoryLayout() {
 
   const [products, setProducts] = useState([]);
 
+
+
+
+
+  let {categoryId} = useParams();
+
+  const category = categories.find((el)=>el.path===categoryId)
+  const productsList = products.filter((el)=>el.pathName===category.title && el.archived===false)
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://magnificent-speculoos-ca08a4.netlify.app/.netlify/functions/products-get');
+        const response = await axios.get(`http://localhost:8888/.netlify/functions/products-get`);
         setProducts(response.data.rows);
       } catch (error) {
         // Handle errors here
@@ -49,13 +58,6 @@ export default function CategoryLayout() {
 
     fetchData();
   }, []);
-
-
-
-  let {categoryId} = useParams();
-
-  const category = categories.find((el)=>el.path===categoryId)
-  const productsList = products.filter((el)=>el.pathName===category.title && el.archived===false)
 
   return (
     <div className={'category-container'}>
