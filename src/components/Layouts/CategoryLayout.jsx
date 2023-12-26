@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import ProductItem from "../ProductItem/Product"
 import { useLocation, useParams, useSearchParams } from 'react-router-dom';
 import { useState } from 'react';
-import axios from 'axios';
 import "./CategoryLayout.css"
+import axios from 'axios';
 
 
-//fetching data
+
 
 
 
@@ -35,35 +35,39 @@ const categories = [
 export default function CategoryLayout() {
 
   const [products, setProducts] = useState([]);
-
-
-
+  const [productsList, setProductsList] = useState([]);
+  const [isFetched, setIsFetched] = useState(false);
 
 
   let {categoryId} = useParams();
-
-  const category = categories.find((el)=>el.path===categoryId)
-  const productsList = products.filter((el)=>el.pathName===category.title && el.archived===false)
+  const category = categories.find((el)=>el.title===useParams().categoryId)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://magnificent-speculoos-ca08a4.netlify.app/.netlify/functions/products-get`);
+        const response = await axios.get(`http://localhost:8888/.netlify/functions/products-get?categoryId=${encodeURIComponent(categoryId)}`);
         setProducts(response.data.rows);
+        setIsFetched(true);
+        setProductsList(products.filter((el) => el.pathName === category.title && el.archived === false));
       } catch (error) {
-        // Handle errors here
         console.error('There was a problem with the fetch operation:', error);
       }
     };
-
+  
     fetchData();
-  }, []);
+  }, [categoryId, category.title]); // Include categoryId and category.title in the dependency array if they are used inside the useEffect
+  
+  useEffect(() => {
+    setProductsList(products.filter((el) => el.pathName === category.title && el.archived === false));
+  }, [products, category.title]);
+  
 
   return (
     <div className={'category-container'}>
       <h1 className={'titletext'}>{category.title}</h1>
       <p className='category-desc'>{category.description}</p>
-      <div className='list'>{productsList.map((item, key) => (
+      {isFetched && (
+        <div className='list'>{productsList.map((item, key) => (
                   <ProductItem
                   key={key}
                         product={item}
@@ -74,6 +78,13 @@ export default function CategoryLayout() {
                
                 
             ))}</div>
+      )}
+
+
+        
+      
+      
+      
             
             
             
