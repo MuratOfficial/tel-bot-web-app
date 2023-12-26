@@ -1,5 +1,7 @@
 exports.handler = async function (event, context) {
-  const apiUrl = `https://api.moysklad.ru/api/remap/1.2/report/stock/all/current`;
+  const productId = event.queryStringParameters.productId;
+
+  const apiUrl = `https://api.moysklad.ru/api/remap/1.2/entity/product/${productId}/images`;
   const username = "admin@dessert1";
   const password = "7212565689";
 
@@ -23,6 +25,8 @@ exports.handler = async function (event, context) {
       body: JSON.stringify(data),
     };
   } catch (error) {
-    return console.log(error);
+    return {
+      statusCode: 500,
+    };
   }
 };

@@ -10,19 +10,8 @@
   row-gap: 1rem;
 }
 
-.imgStyle {
-  width: 100%;
-  height: 100px;
-  margin: 0 auto;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-  background-color: azure;
-}
-
-.description {
-  font-size: 0.8em;
+.stock {
+  font-size: 0.6em;
   text-align: center;
 
   color: var(--tg-theme-hint-color);

@@ -2,31 +2,26 @@ import React from 'react';
 import Button from '../Button/Button';
 import "./Product.css";
 
+import ProductImg from './ProductImg';
+
 const ProductItem = ({product, className, onAdd}) => {
+
+    
+
 
     const onAddHandler = () => {
         onAdd(product);
     }
 
-    const imageUrls = [
-        "/pies/pie1.png",
-        '/pies/pie2.png',
-        '/pies/pie3.png',
-        '/pies/pie4.png',
-        '/pies/pie5.png',
-        '/pies/pie6.png',
-      ];
-    
-      // Generate a random index to select a random image
-      const randomIndex = Math.floor(Math.random() * imageUrls.length);
+
 
     return (
         <div className={'product ' + className}>
-            <div className={'imgStyle'} style={{backgroundImage:`url(${imageUrls[randomIndex]})`}}>
-                
-            </div>
-            <div className={'title'}>{product.name}</div>
-            <div className={'price'}>{product.salePrices[0].value}
+<ProductImg item={product.product} />
+            
+            <div className={'title'}>{product.product.name}</div>
+            <div className={'stock'}>Осталось: {product.stock.stock}</div>
+            <div className={'price'}>{product.product.salePrices[0].value}
                 <span><b> ₸</b></span>
             </div>
             <Button className={'add-btn'} onClick={onAddHandler}>
