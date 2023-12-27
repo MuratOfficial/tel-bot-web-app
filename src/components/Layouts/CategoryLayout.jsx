@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import ProductItem from "../ProductItem/Product"
-import { useLocation, useParams, useSearchParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { useState } from 'react';
 import "./CategoryLayout.css"
 import axios from 'axios';
@@ -76,7 +76,6 @@ export default function CategoryLayout() {
       )}
 
 
-        
       
       
       

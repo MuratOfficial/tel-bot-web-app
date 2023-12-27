@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import CategoryList from "./components/CategoryList/CategoryList";
 import ErrorPage from "./ErrorPage";
 import CategoryLayout from "./components/Layouts/CategoryLayout";
+import Basket from "./components/Basket/Basket";
 
 function App() {
   const { tg } = useTelegram();
@@ -24,6 +25,7 @@ function App() {
         </Route>
 
         <Route path="cabinet" element />
+        <Route path="basket" element={<Basket />} />
       </Routes>
     </div>
   );

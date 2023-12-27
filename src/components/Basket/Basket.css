@@ -1,0 +1,40 @@
+.basket-item {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--tg-theme-bg-color);
+  border-radius: 15px;
+  padding: 15px;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8em;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 1rem;
+}
+
+.basket-item-price {
+  text-align: center;
+  color: var(--tg-theme-text-color);
+}
+
+.basket-button {
+  padding: 10px 15px;
+  background: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1em;
+  margin-top: 1rem;
+}
